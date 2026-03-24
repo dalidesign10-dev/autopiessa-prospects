@@ -2565,21 +2565,41 @@ const verifiedStores = [
 {name:"Pieces (Bd Khouribga)",type:"seller",city:"Casablanca",quarter:"Derb Omar",phone:"05 22 30 40 10",rating:"4.3",notes:"Google Maps verifie",links:[]},
 {name:"KomforAuto",type:"seller",city:"Casablanca",quarter:"",phone:"05 22 20 54 76",rating:"4.6",notes:"Google Maps verifie",links:[]},
 {name:"Feu Vert Casablanca Palmier",type:"repair",city:"Casablanca",quarter:"Palmier",phone:"05 22 68 03 36",rating:"4.9",notes:"Google Maps - 407 avis",links:[]},
-{name:"Centre Africain Pieces Rechange",type:"seller",city:"Casablanca",quarter:"",phone:"05 22 54 11 14",rating:"4.7",notes:"Google Maps - CAPRAM",links:[]}
+{name:"Centre Africain Pieces Rechange",type:"seller",city:"Casablanca",quarter:"",phone:"05 22 54 11 14",rating:"4.7",notes:"Google Maps - CAPRAM",links:[]},
+// --- FACEBOOK MARKETPLACE SELLERS (scraped live) ---
+{name:"عبدالله أبو مريم الراجي",type:"seller",city:"Casablanca",quarter:"",notes:"FB Marketplace - Vend TOUTES les optiques. جميع الأضواء الأمامية والخلفية. 4.5 etoiles",links:[{label:"FB Marketplace",url:"https://web.facebook.com/marketplace/item/1751429375823464/",type:"fb"}]},
+{name:"Abdessamad Taleb",type:"seller",city:"Casablanca",quarter:"",notes:"FB Marketplace - Optique Nissan Micra 2018",links:[{label:"FB Marketplace",url:"https://web.facebook.com/marketplace/item/2992932577568269/",type:"fb"}]},
+{name:"Iliasse Elbouzidi",type:"seller",city:"Casablanca",quarter:"",notes:"FB Marketplace - Optique Seat Ibiza LED droit/gauche",links:[{label:"FB Marketplace",url:"https://web.facebook.com/marketplace/item/1244736674418448/",type:"fb"}]},
+{name:"Yass Ine",type:"seller",city:"Casablanca",quarter:"",notes:"FB Marketplace - 44 avis, Bien note. Feux arriere et optique avant",links:[{label:"FB Marketplace",url:"https://web.facebook.com/marketplace/item/1499325774920624/",type:"fb"}]},
+{name:"France Pieces Okaz (FB)",type:"seller",city:"Casablanca",quarter:"Oulfa",notes:"FB Marketplace - 138 avis, Bien note. Phares neufs toutes marques. Ford Focus, Renault, etc.",links:[{label:"FB Marketplace",url:"https://web.facebook.com/marketplace/item/879668557767337/",type:"fb"}]},
+{name:"Vendeur Peugeot 208 accessories",type:"seller",city:"Casablanca",quarter:"",phone:"06 33 58 97 78",notes:"FB Marketplace - Accessoires Peugeot 208 + Optique Opel Corsa 2025 original",links:[]},
+{name:"Vendeur جميع مستلزمات السيارات",type:"seller",city:"Casablanca",quarter:"",notes:"FB Marketplace - Parchoc optique fixation calandre grille feu - TOUT pour voitures",links:[]}
 ];
 
-// Facebook groups
+// Facebook groups - SCRAPED FROM FACEBOOK LIVE
 const fbGroups = [
-    {
-        name: "La ferraille Casablanca - pieces auto",
-        notes: "Groupe actif - Pieces d'occasion, phares, optiques",
-        url: "https://www.facebook.com/groups/222779215887792/"
-    },
-    {
-        name: "\u0628\u064A\u0639 \u0627\u0644\u0633\u064A\u0627\u0631\u0627\u062A \u0641\u064A \u0627\u0644\u062F\u0627\u0631 \u0627\u0644\u0628\u064A\u0636\u0627\u0621",
-        notes: "Groupe vente automobiles Casablanca et environs",
-        url: "https://www.facebook.com/groups/313320836102238/"
-    }
+    {name:"La ferraille Casablanca - pieces auto",notes:"Groupe actif - Pieces occasion, phares, optiques",url:"https://www.facebook.com/groups/222779215887792/"},
+    {name:"بيع السيارات في الدار البيضاء",notes:"Groupe vente automobiles Casablanca",url:"https://www.facebook.com/groups/313320836102238/"},
+    {name:"Pieces Auto d'Occasion au Maroc",notes:"35K membres - 10+ publications/jour - REJOINDRE",url:"https://www.facebook.com/search/groups/?q=Pieces%20Auto%20Occasion%20Maroc"},
+    {name:"vente voitures occasion Maroc بيع السيارات المستعملة",notes:"51K membres - 90+ publications/jour",url:"https://www.facebook.com/search/groups/?q=vente%20voitures%20occasion%20maroc"},
+    {name:"BMW بي ام دبليو Maroc MAMA (Pieces, Solutions, Vente)",notes:"32K membres - 50+ publications/jour",url:"https://www.facebook.com/search/groups/?q=BMW%20Maroc%20MAMA"},
+    {name:"سوق السيارات achat vente voitures maroc",notes:"79K membres - 90+ publications/jour",url:"https://www.facebook.com/search/groups/?q=achat%20vente%20voitures%20maroc"},
+    {name:"بيع وشراء السيارات المستعملة بالمغرب groupe officiel",notes:"277K membres - 40+ publications/jour - PLUS GRAND GROUPE",url:"https://www.facebook.com/search/groups/?q=بيع%20شراء%20سيارات%20مستعملة%20مغرب"},
+    {name:"WebAuto.ma السيارات في المغرب",notes:"36K membres - 90+ publications/jour",url:"https://www.facebook.com/search/groups/?q=WebAuto%20Maroc"},
+    {name:"pieces auto maroc قطع غيار السيارات المغرب",notes:"91K membres - 10+ publications/jour",url:"https://www.facebook.com/search/groups/?q=pieces%20auto%20maroc%20قطع%20غيار"},
+    {name:"Achat et vente pieces detachees automobiles neuves",notes:"4.6K membres - 10 publications/jour",url:"https://www.facebook.com/search/groups/?q=pieces%20detachees%20automobiles%20maroc"},
+    {name:"Audi Maroc Club (AMC)",notes:"57K membres - 10+ publications/jour",url:"https://www.facebook.com/search/groups/?q=Audi%20Maroc%20Club"},
+    {name:"Ferraille salmia auto group",notes:"13K membres - 5 publications/jour - CIBLE DIRECTE",url:"https://www.facebook.com/search/groups/?q=ferraille%20salmia%20auto"},
+    {name:"Toute les pieces volkswagen la ferraille salmia",notes:"17K membres - VW specialiste",url:"https://www.facebook.com/search/groups/?q=pieces%20volkswagen%20ferraille%20salmia"},
+    {name:"La Ferraille du Maroc",notes:"15K membres - 10+ publications/jour",url:"https://www.facebook.com/search/groups/?q=ferraille%20maroc"},
+    {name:"GROUPE SALMIA 2 CASA",notes:"651 membres - Groupe local Salmia",url:"https://www.facebook.com/search/groups/?q=salmia%202%20casa"},
+    {name:"Les ferrailleurs de maroc",notes:"22K membres",url:"https://www.facebook.com/search/groups/?q=ferrailleurs%20maroc"},
+    {name:"لافيراى السالمية FERAILLE SALMIA",notes:"4.8K membres - 9 publications non lues",url:"https://www.facebook.com/search/groups/?q=feraille%20salmia"},
+    {name:"Opel أوبل Maroc (Pieces, Solutions, Vente, Achat)",notes:"17K membres - 20+ publications/jour",url:"https://www.facebook.com/search/groups/?q=Opel%20Maroc"},
+    {name:"Annonces Voitures au Maroc",notes:"8.9K membres - 50+ publications/jour",url:"https://www.facebook.com/search/groups/?q=Annonces%20Voitures%20Maroc"},
+    {name:"Pieces de rechange voitures occasion Maroc",notes:"6.5K membres",url:"https://www.facebook.com/search/groups/?q=pieces%20rechange%20voitures%20occasion%20maroc"},
+    {name:"Achat vente des Voitures au MAROC",notes:"11K membres - 30+ publications/jour",url:"https://www.facebook.com/search/groups/?q=achat%20vente%20voitures%20maroc"},
+    {name:"Achat, Vente Des Voitures Au Maroc",notes:"103K membres - 40+ publications/jour",url:"https://www.facebook.com/search/groups/?q=Achat%20Vente%20Voitures%20Maroc"}
 ];
 
 // Search keywords and cities
