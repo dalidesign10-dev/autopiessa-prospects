@@ -360,8 +360,9 @@
 
 <!-- SECTION 2: SEARCH LINKS -->
 <div class="section" id="sec-search">
-    <h2>Recherche Rapide par Ville</h2>
-    <p style="color:var(--text-dim);margin-bottom:20px;">Cliquez sur Avito / Facebook / Google Maps pour trouver des vendeurs dans chaque ville. Ajoutez les bons profils a votre CRM.</p>
+    <h2>Recherche Rapide par Ville — 8 Plateformes</h2>
+    <p style="color:var(--text-dim);margin-bottom:10px;">Chaque carte = 8 liens: <span style="color:var(--accent)">Avito</span> | <span style="color:#1877f2">FB Marketplace</span> | <span style="color:#1877f2">FB Groupes</span> | <span style="color:#1877f2">FB Pages</span> | <span style="color:#ea4335">Google Maps</span> | <span style="color:#e1306c">Instagram</span> | <span style="color:#ffc107">Telecontact</span> | <span style="color:#4285f4">Google Social</span></p>
+    <p style="color:var(--accent);margin-bottom:20px;font-weight:600;">24 mots-cles × 59 villes × 8 plateformes = <span id="totalCalc"></span> liens de recherche</p>
 
     <div class="filter-bar">
         <input type="text" id="searchFilter" placeholder="Filtrer par ville ou mot-cle..." oninput="filterSearches()">
@@ -391,6 +392,7 @@
         <button class="crm-btn crm-export" onclick="exportCRM()">Exporter CSV</button>
         <button class="crm-btn crm-import" onclick="document.getElementById('importFile').click()">Importer CSV</button>
         <input type="file" id="importFile" accept=".csv" style="display:none" onchange="importCRM(event)">
+        <button class="crm-btn" style="background:#a855f7;color:#fff;" onclick="showBulkModal()">Ajout Rapide (Bulk)</button>
         <button class="crm-btn crm-clear" onclick="if(confirm('Effacer tous les prospects?')){localStorage.removeItem('autopiessa_crm');renderCRM();}">Effacer tout</button>
     </div>
 
@@ -441,6 +443,26 @@
         <div class="modal-btns">
             <button class="modal-save" onclick="saveProspect()">Ajouter</button>
             <button class="modal-cancel" onclick="hideModal()">Annuler</button>
+        </div>
+    </div>
+</div>
+
+<!-- BULK ADD MODAL -->
+<div class="modal-overlay" id="bulkModal">
+    <div class="modal">
+        <h3>Ajout Rapide (Bulk) — Collez vos prospects</h3>
+        <p style="color:var(--text-dim);font-size:0.85em;margin-bottom:10px;">Un prospect par ligne. Format: <code>Nom | Ville | Telephone</code><br>Exemple: <code>Auto Rachid | Casablanca | 06 61 XX XX XX</code></p>
+        <label>Ville par defaut (si pas specifiee)</label>
+        <input type="text" id="bulk_city" placeholder="Casablanca" value="Casablanca">
+        <label>Source</label>
+        <input type="text" id="bulk_source" placeholder="Ex: Facebook, Instagram, Avito, Google Maps">
+        <label>Prospects (un par ligne)</label>
+        <textarea id="bulk_data" style="height:200px;font-family:monospace;font-size:0.85em;" placeholder="Auto Rachid | Casablanca | 06 61 XX XX XX
+Garage Moulay | Rabat
+Pieces Auto Sami | | 06 70 XX XX XX"></textarea>
+        <div class="modal-btns">
+            <button class="modal-save" onclick="saveBulk()">Ajouter tout</button>
+            <button class="modal-cancel" onclick="document.getElementById('bulkModal').classList.remove('show')">Annuler</button>
         </div>
     </div>
 </div>
@@ -2466,22 +2488,38 @@ const cities = [
     "Kenitra","Tetouan","Sale","Nador","Mohammedia","El Jadida","Beni Mellal",
     "Khouribga","Settat","Berrechid","Temara","Safi","Laayoune","Ksar El Kebir",
     "Taza","Errachidia","Guelmim","Khemisset","Larache","Ouarzazate","Inezgane",
-    "Tiznit","Essaouira","Ifrane","Azrou","Midelt","Dakhla","Tan-Tan"
+    "Tiznit","Essaouira","Ifrane","Azrou","Midelt","Dakhla","Tan-Tan",
+    "Al Hoceima","Chefchaouen","Taroudant","Sidi Kacem","Sidi Slimane",
+    "Taourirt","Berkane","Jerada","Figuig","Zagora","Tinghir","Bouarfa",
+    "Ben Guerir","Youssoufia","Chichaoua","Skhirat","Bouznika","Benslimane",
+    "Azemmour","Sidi Bennour","Fkih Ben Salah","Souk Sebt","Demnate"
 ];
 
 const searchKeywords = [
-    { fr: "phare optique voiture", ar: "\u0641\u0646\u0627\u0631\u0627\u062A \u0627\u0644\u0633\u064A\u0627\u0631\u0627\u062A" },
-    { fr: "fixation optique phare", ar: "\u062A\u062B\u0628\u064A\u062A \u0641\u0646\u0627\u0631\u0627\u062A" },
-    { fr: "reparation phare", ar: "\u0627\u0635\u0644\u0627\u062D \u0641\u0646\u0627\u0631\u0627\u062A" },
-    { fr: "pieces auto occasion", ar: "\u0642\u0637\u0639 \u063A\u064A\u0627\u0631 \u0645\u0633\u062A\u0639\u0645\u0644\u0629" },
-    { fr: "optique avant arriere", ar: "\u0641\u0646\u0627\u0631\u0627\u062A \u0627\u0645\u0627\u0645\u064A\u0629 \u062E\u0644\u0641\u064A\u0629" },
-    { fr: "support phare bracket", ar: "\u062D\u0627\u0645\u0644 \u0641\u0646\u0627\u0631" },
-    { fr: "casse auto ferraille", ar: "\u0644\u0627\u0641\u064A\u0631\u0627\u064A \u0642\u0637\u0639 \u063A\u064A\u0627\u0631" },
-    { fr: "eclairage auto phare LED", ar: "\u0627\u0636\u0627\u0621\u0629 \u0633\u064A\u0627\u0631\u0627\u062A" },
-    { fr: "phare cass\u00e9 r\u00e9paration", ar: "\u0641\u0646\u0627\u0631 \u0645\u0643\u0633\u0648\u0631" },
-    { fr: "vente phare occasion", ar: "\u0628\u064A\u0639 \u0641\u0646\u0627\u0631 \u0645\u0633\u062A\u0639\u0645\u0644" },
-    { fr: "garage carrosserie phare", ar: "\u0643\u0627\u0631\u0627\u062C \u0643\u0627\u0631\u0648\u0633\u0631\u064A" },
-    { fr: "pi\u00e8ces carrosserie auto", ar: "\u0642\u0637\u0639 \u0643\u0627\u0631\u0648\u0633\u0631\u064A" }
+    { fr: "phare optique voiture", ar: "فنارات السيارات" },
+    { fr: "fixation optique phare", ar: "تثبيت فنارات" },
+    { fr: "reparation phare", ar: "اصلاح فنارات" },
+    { fr: "pieces auto occasion", ar: "قطع غيار مستعملة" },
+    { fr: "optique avant arriere", ar: "فنارات امامية خلفية" },
+    { fr: "support phare bracket", ar: "حامل فنار" },
+    { fr: "casse auto ferraille", ar: "لافيراي قطع غيار" },
+    { fr: "eclairage auto phare LED", ar: "اضاءة سيارات" },
+    { fr: "phare cassé réparation", ar: "فنار مكسور" },
+    { fr: "vente phare occasion", ar: "بيع فنار مستعمل" },
+    { fr: "garage carrosserie phare", ar: "كاراج كاروسري" },
+    { fr: "pièces carrosserie auto", ar: "قطع كاروسري" },
+    { fr: "feu arriere voiture", ar: "فو اريار سيارة" },
+    { fr: "optique Renault Dacia", ar: "اوبتيك رونو داسيا" },
+    { fr: "optique Peugeot Citroen", ar: "اوبتيك بيجو ستروين" },
+    { fr: "optique Volkswagen BMW", ar: "اوبتيك فولكسفاغن" },
+    { fr: "phare Mercedes Audi", ar: "فنار مرسيدس اودي" },
+    { fr: "pare choc phare feu", ar: "بارشوك فنار" },
+    { fr: "accessoire eclairage auto", ar: "اكسسوار اضاءة" },
+    { fr: "magasin pieces detachees", ar: "ماغازان قطع غيار" },
+    { fr: "fournisseur pieces auto", ar: "مورد قطع غيار" },
+    { fr: "grossiste pieces automobile", ar: "تاجر جملة قطع غيار" },
+    { fr: "reparation carrosserie", ar: "اصلاح كاروسري" },
+    { fr: "phare antibrouillard", ar: "فنار ضباب" }
 ];
 
 // ==================== RENDER FUNCTIONS ====================
@@ -2600,18 +2638,31 @@ function renderSearchLinks() {
         html += '<div class="search-section"><h3>' + kw.fr + ' / ' + kw.ar + '</h3><div class="search-grid">';
 
         cities.forEach(function(city) {
-            var avitoUrl = 'https://www.avito.ma/fr/' + city.toLowerCase().replace(/\s/g,'_') + '/' + kw.fr.replace(/\s/g,'_') + '--%C3%A0_vendre';
-            var fbUrl = 'https://web.facebook.com/marketplace/' + city.toLowerCase().replace(/\s/g,'') + '/search?query=' + encodeURIComponent(kw.fr);
-            var gmUrl = 'https://www.google.com/maps/search/' + encodeURIComponent(kw.fr + ' ' + city + ' Maroc');
+            var q = encodeURIComponent(kw.fr);
+            var qCity = encodeURIComponent(kw.fr + ' ' + city);
+            var citySlug = city.toLowerCase().replace(/\s/g,'_');
+            var avitoUrl = 'https://www.avito.ma/fr/' + citySlug + '/' + kw.fr.replace(/\s/g,'_') + '--%C3%A0_vendre';
+            var fbMktUrl = 'https://web.facebook.com/marketplace/' + city.toLowerCase().replace(/\s/g,'') + '/search?query=' + q;
+            var fbGrpUrl = 'https://web.facebook.com/search/groups/?q=' + encodeURIComponent(kw.fr + ' ' + city + ' Maroc');
+            var fbPageUrl = 'https://web.facebook.com/search/pages/?q=' + encodeURIComponent(kw.fr + ' ' + city);
+            var gmUrl = 'https://www.google.com/maps/search/' + qCity;
+            var igUrl = 'https://www.instagram.com/explore/search/keyword/?q=' + encodeURIComponent(kw.fr.replace(/\s/g,'') + city.toLowerCase());
+            var tcUrl = 'https://www.telecontact.ma/trouver/index.php?nxo=moteur&nxs=process&string=' + encodeURIComponent(kw.fr) + '&ou=' + encodeURIComponent(city.toLowerCase());
+            var googleUrl = 'https://www.google.com/search?q=' + encodeURIComponent(kw.fr + ' ' + city + ' Maroc site:facebook.com OR site:instagram.com');
 
             html += '<div class="search-card" data-search="' + city.toLowerCase() + ' ' + kw.fr + '">' +
                 '<div class="search-info"><div class="search-city">' + city + '</div><div class="search-keyword">' + kw.fr + '</div></div>' +
-                '<div class="search-links">' +
-                    '<a href="' + avitoUrl + '" target="_blank" class="search-btn btn-avito">Avito</a> ' +
-                    '<a href="' + fbUrl + '" target="_blank" class="search-btn btn-fb">FB</a> ' +
+                '<div class="search-links" style="flex-wrap:wrap;gap:4px;">' +
+                    '<a href="' + avitoUrl + '" target="_blank" class="search-btn btn-avito">Avito</a>' +
+                    '<a href="' + fbMktUrl + '" target="_blank" class="search-btn btn-fb">FB Mkt</a>' +
+                    '<a href="' + fbGrpUrl + '" target="_blank" class="search-btn btn-fb" style="background:rgba(24,119,242,0.3)">FB Grp</a>' +
+                    '<a href="' + fbPageUrl + '" target="_blank" class="search-btn btn-fb" style="background:rgba(24,119,242,0.15)">FB Page</a>' +
                     '<a href="' + gmUrl + '" target="_blank" class="search-btn btn-gm">Maps</a>' +
+                    '<a href="' + igUrl + '" target="_blank" class="search-btn" style="background:rgba(225,48,108,0.2);color:#e1306c;">Insta</a>' +
+                    '<a href="' + tcUrl + '" target="_blank" class="search-btn" style="background:rgba(255,193,7,0.2);color:#ffc107;">Telec</a>' +
+                    '<a href="' + googleUrl + '" target="_blank" class="search-btn" style="background:rgba(66,133,244,0.2);color:#4285f4;">Google</a>' +
                 '</div></div>';
-            totalLinks += 3;
+            totalLinks += 8;
         });
 
         html += '</div></div>';
@@ -2700,6 +2751,29 @@ function deleteProspect(i) { if(confirm('Supprimer?')){ var d = getCRM(); d.spli
 
 function showAddModal() { document.getElementById('addModal').classList.add('show'); }
 function hideModal() { document.getElementById('addModal').classList.remove('show'); }
+function showBulkModal() { document.getElementById('bulkModal').classList.add('show'); }
+function saveBulk() {
+    var lines = document.getElementById('bulk_data').value.trim().split('\n').filter(function(l){return l.trim();});
+    if (!lines.length) { alert('Aucune donnee!'); return; }
+    var defCity = document.getElementById('bulk_city').value.trim() || 'Casablanca';
+    var source = document.getElementById('bulk_source').value.trim() || 'Bulk Import';
+    var d = getCRM();
+    var added = 0;
+    lines.forEach(function(line) {
+        var parts = line.split('|').map(function(s){return s.trim();});
+        var name = parts[0] || '';
+        if (!name) return;
+        var city = parts[1] || defCity;
+        var phone = parts[2] || '';
+        if (d.some(function(p){return p.name === name;})) return;
+        d.push({name:name,city:city,phone:phone,type:'Vendeur phares',source:source,link:'',notes:'',status:'Nouveau',date:new Date().toLocaleDateString('fr-FR')});
+        added++;
+    });
+    saveCRMData(d);
+    document.getElementById('bulkModal').classList.remove('show');
+    document.getElementById('bulk_data').value = '';
+    alert(added + ' prospects ajoutes au CRM!');
+}
 
 function saveProspect() {
     var name = document.getElementById('m_name').value.trim();
@@ -2778,6 +2852,9 @@ renderStores();
 renderSearchLinks();
 renderFB();
 renderCRM();
+// Update total calc
+var tc = document.getElementById('totalCalc');
+if(tc) tc.textContent = (searchKeywords.length * cities.length * 8).toLocaleString();
 </script>
 </body>
 </html>
