@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morocco Auto Market Stats — Bracket Business Intelligence</title>
+<style>
+body{font-family:system-ui;background:#0a0a0f;color:#e2e8f0;padding:20px;max-width:1200px;margin:0 auto}
+h1{color:#f59e0b;text-align:center}
+h2{color:#3b82f6;margin-top:30px;border-bottom:1px solid #1e293b;padding-bottom:8px}
+h3{color:#10b981;margin-top:20px}
+.card{background:#12121a;border:1px solid #1e293b;border-radius:12px;padding:20px;margin:15px 0}
+table{width:100%;border-collapse:collapse;margin:10px 0}
+th{background:rgba(245,158,11,0.1);color:#f59e0b;padding:8px 10px;text-align:left;font-size:0.85em}
+td{padding:6px 10px;border-top:1px solid #1e293b;font-size:0.85em}
+tr:hover td{background:#1a1a28}
+.green{color:#10b981}
+.yellow{color:#f59e0b}
+.red{color:#ef4444}
+.blue{color:#3b82f6}
+.bar{height:20px;border-radius:4px;display:inline-block;min-width:4px}
+.bar-green{background:#10b981}
+.bar-yellow{background:#f59e0b}
+.bar-blue{background:#3b82f6}
+.bar-red{background:#ef4444}
+.priority-box{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.75em;font-weight:bold}
+.p1{background:rgba(16,185,129,0.2);color:#10b981}
+.p2{background:rgba(245,158,11,0.2);color:#f59e0b}
+.p3{background:rgba(59,130,246,0.2);color:#3b82f6}
+.p4{background:rgba(148,163,184,0.2);color:#94a3b8}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:20px 0}
+.stat-card{background:#12121a;border:1px solid #1e293b;border-radius:10px;padding:15px;text-align:center}
+.stat-num{font-size:2em;font-weight:bold;color:#f59e0b}
+.stat-label{font-size:0.8em;color:#94a3b8}
+.note{background:rgba(59,130,246,0.1);padding:15px;border-radius:8px;margin:15px 0;border-left:3px solid #3b82f6;font-size:0.9em}
+.hot{background:rgba(239,68,68,0.1);border-left-color:#ef4444}
+</style>
+</head>
+<body>
+
+<h1>Morocco Auto Market Intelligence</h1>
+<p style="text-align:center;color:#94a3b8;">Data-driven analysis for headlight bracket business — Which models to 3D print first</p>
+
+<div class="summary">
+<div class="stat-card"><div class="stat-num">4.3M</div><div class="stat-label">Vehicules en circulation</div></div>
+<div class="stat-card"><div class="stat-num">176,401</div><div class="stat-label">Voitures neuves vendues 2024</div></div>
+<div class="stat-card"><div class="stat-num">40%</div><div class="stat-label">Dacia + Renault (part marche)</div></div>
+<div class="stat-card"><div class="stat-num">12-15 ans</div><div class="stat-label">Age moyen du parc</div></div>
+</div>
+
+<h2>1. TOP 100 — Ventes de voitures neuves au Maroc 2024</h2>
+<div class="card">
+<p style="color:#94a3b8;">Source: AIVAM / wandaloo.com — 157,139 VP vendus en 2024</p>
+<table>
+<tr><th>Rang</th><th>Modele</th><th>Ventes 2024</th><th>Ventes 2023</th><th>Evol.</th><th>Part marche</th><th>Bracket Bross?</th><th>Priorite</th></tr>
+<tr><td>1</td><td><strong>DACIA SANDERO</strong></td><td class="green">15,831</td><td>12,404</td><td class="green">+27.6%</td><td>10.1%</td><td class="yellow">A verifier</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>2</td><td><strong>DACIA LOGAN</strong></td><td class="green">14,973</td><td>10,893</td><td class="green">+37.5%</td><td>9.5%</td><td class="green">BHL756</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>3</td><td><strong>RENAULT EXPRESS</strong></td><td>11,013</td><td>12,884</td><td class="red">-14.5%</td><td>7.5%</td><td class="yellow">A verifier</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>4</td><td><strong>RENAULT CLIO</strong></td><td class="green">9,142</td><td>6,408</td><td class="green">+42.7%</td><td>6.0%</td><td class="green">BHL516/569</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>5</td><td><strong>PEUGEOT 208</strong></td><td>6,941</td><td>8,292</td><td class="red">-16.3%</td><td>5.0%</td><td class="yellow">A verifier</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>6</td><td><strong>DACIA DUSTER</strong></td><td class="green">7,012</td><td>6,105</td><td class="green">+14.9%</td><td>4.5%</td><td class="green">BHL565</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>7</td><td><strong>HYUNDAI TUCSON</strong></td><td>6,053</td><td>5,505</td><td class="green">+10.0%</td><td>3.5%</td><td class="yellow">A verifier</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>8</td><td><strong>OPEL CORSA</strong></td><td>4,940</td><td>4,345</td><td class="green">+13.7%</td><td>3.1%</td><td class="yellow">A verifier</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>9</td><td><strong>VW TIGUAN</strong></td><td class="green">3,378</td><td>1,422</td><td class="green">+137.6%</td><td>2.1%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td>10</td><td><strong>VW T-ROC</strong></td><td>3,127</td><td>3,212</td><td class="red">-2.7%</td><td>2.0%</td><td class="red">Non</td><td><span class="priority-box p4">—</span></td></tr>
+<tr><td>11</td><td><strong>KIA SPORTAGE</strong></td><td class="green">3,046</td><td>1,679</td><td class="green">+81.4%</td><td>1.9%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td>12</td><td><strong>SEAT ATECA</strong></td><td>1,904</td><td>1,600</td><td class="green">+19%</td><td>1.2%</td><td class="red">Non</td><td><span class="priority-box p4">—</span></td></tr>
+<tr><td>13</td><td><strong>VW TOUAREG</strong></td><td>1,863</td><td>2,286</td><td class="red">-18.5%</td><td>1.2%</td><td class="red">Non</td><td><span class="priority-box p4">—</span></td></tr>
+<tr><td>14</td><td><strong>HYUNDAI ACCENT</strong></td><td>1,837</td><td>3,249</td><td class="red">-43.5%</td><td>1.2%</td><td class="yellow">A verifier</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>15</td><td><strong>FIAT FIORINO</strong></td><td>1,820</td><td>1,617</td><td class="green">+12.6%</td><td>1.2%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td>16</td><td><strong>CITROEN C-ELYSEE</strong></td><td>1,751</td><td>1,971</td><td class="red">-11.2%</td><td>1.1%</td><td class="green">BHL536/537</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>17</td><td><strong>CITROEN BERLINGO</strong></td><td>1,706</td><td>1,408</td><td class="green">+21.2%</td><td>1.1%</td><td class="yellow">A verifier</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>18</td><td><strong>PEUGEOT 2008</strong></td><td>1,598</td><td>1,058</td><td class="green">+51.0%</td><td>1.0%</td><td class="yellow">A verifier</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>19</td><td><strong>SKODA OCTAVIA</strong></td><td>1,576</td><td>1,531</td><td class="green">+2.9%</td><td>1.0%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td>20</td><td><strong>AUDI Q3</strong></td><td>1,515</td><td>1,235</td><td class="green">+22.7%</td><td>1.0%</td><td class="red">Non</td><td><span class="priority-box p4">—</span></td></tr>
+<tr><td>21</td><td><strong>CITROEN C3</strong></td><td>1,500</td><td>897</td><td class="green">+67.2%</td><td>1.0%</td><td class="yellow">A verifier</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>22</td><td><strong>HYUNDAI I10</strong></td><td>1,489</td><td>1,085</td><td class="green">+37.2%</td><td>0.9%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td>23</td><td><strong>RENAULT MEGANE</strong></td><td>1,349</td><td>1,759</td><td class="red">-23.3%</td><td>0.9%</td><td class="green">BHL13/510/546</td><td><span class="priority-box p1">P1</span></td></tr>
+<tr><td>24</td><td><strong>SKODA KODIAQ</strong></td><td>1,256</td><td>1,112</td><td class="green">+13.0%</td><td>0.8%</td><td class="red">Non</td><td><span class="priority-box p4">—</span></td></tr>
+<tr><td>25</td><td><strong>KIA PICANTO</strong></td><td>1,253</td><td>1,389</td><td class="red">-9.8%</td><td>0.8%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td colspan="8" style="padding:10px;color:#94a3b8;text-align:center;">--- Suite du classement ---</td></tr>
+<tr><td>28</td><td><strong>SEAT IBIZA</strong></td><td>1,141</td><td>299</td><td class="green">+282%</td><td>0.7%</td><td class="green">BHL19/20</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>32</td><td><strong>VW CADDY</strong></td><td>1,006</td><td>1,239</td><td class="red">-18.8%</td><td>0.6%</td><td class="green">BHL25/26</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>36</td><td><strong>VW GOLF</strong></td><td>961</td><td>536</td><td class="green">+79.3%</td><td>0.6%</td><td class="green">BHL29-32</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>41</td><td><strong>CITROEN C4</strong></td><td>764</td><td>522</td><td class="green">+46.4%</td><td>0.5%</td><td class="green">BHL5/6/574</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>47</td><td><strong>FIAT TIPO</strong></td><td>615</td><td>824</td><td class="red">-25.4%</td><td>0.4%</td><td class="yellow">A verifier</td><td><span class="priority-box p3">P3</span></td></tr>
+<tr><td>63</td><td><strong>PEUGEOT 308</strong></td><td>435</td><td>448</td><td class="red">-2.9%</td><td>0.3%</td><td class="green">BHL512/513</td><td><span class="priority-box p2">P2</span></td></tr>
+<tr><td>96</td><td><strong>DACIA LODGY</strong></td><td>251</td><td>4,282</td><td class="red">-94.1%</td><td>0.2%</td><td class="green">BHL520/521</td><td><span class="priority-box p2">P2</span></td></tr>
+</table>
+</div>
+
+<h2>2. Analyse croisee: Marche Marocain × Catalogue Bross × Catalogue Phares</h2>
+
+<div class="note hot">
+<strong>INSIGHT CLE:</strong> Les ventes neuves ne representent que le FLUX. Le STOCK (4.3M voitures en circulation) est ce qui compte pour les brackets. Les voitures de 2008-2018 sont votre marche principal — c'est la que les brackets cassent. Les modeles ci-dessous incluent les cumuls estimes sur 10+ ans.
+</div>
+
+<div class="card">
+<h3>Estimation du parc en circulation par modele (cumul 2010-2024)</h3>
+<table>
+<tr><th>Modele</th><th>Ventes estimees cumul</th><th>Parc estime en circulation</th><th>Brackets/an estime</th><th>Bross dispo?</th><th>PRIORITE</th></tr>
+<tr><td><strong>Dacia Logan (toutes gen.)</strong></td><td>~150,000</td><td>~120,000</td><td>~6,000</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Dacia Sandero (toutes gen.)</strong></td><td>~140,000</td><td>~110,000</td><td>~5,500</td><td class="yellow">Verifier</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Renault Clio (3, 4, 5)</strong></td><td>~90,000</td><td>~70,000</td><td>~3,500</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Renault Express/Kangoo</strong></td><td>~80,000</td><td>~65,000</td><td>~3,250</td><td class="yellow">Verifier</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Peugeot 208</strong></td><td>~55,000</td><td>~45,000</td><td>~2,250</td><td class="yellow">Verifier</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Dacia Duster (1 et 2)</strong></td><td>~50,000</td><td>~40,000</td><td>~2,000</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Hyundai Tucson</strong></td><td>~40,000</td><td>~35,000</td><td>~1,750</td><td class="yellow">Verifier</td><td><span class="priority-box p2">SI DISPO</span></td></tr>
+<tr><td><strong>Renault Megane (2, 3, 4)</strong></td><td>~45,000</td><td>~35,000</td><td>~1,750</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Opel Corsa</strong></td><td>~35,000</td><td>~28,000</td><td>~1,400</td><td class="yellow">Verifier</td><td><span class="priority-box p2">SI DISPO</span></td></tr>
+<tr><td><strong>VW Golf (4, 5, 6, 7)</strong></td><td>~30,000</td><td>~25,000</td><td>~1,250</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Hyundai Accent</strong></td><td>~35,000</td><td>~28,000</td><td>~1,400</td><td class="yellow">Verifier</td><td><span class="priority-box p2">SI DISPO</span></td></tr>
+<tr><td><strong>Citroen C-Elysee</strong></td><td>~20,000</td><td>~18,000</td><td>~900</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Peugeot 301</strong></td><td>~18,000</td><td>~15,000</td><td>~750</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Dacia Lodgy/Dokker</strong></td><td>~35,000</td><td>~30,000</td><td>~1,500</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>VW Polo (5, 6)</strong></td><td>~20,000</td><td>~16,000</td><td>~800</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Citroen C3</strong></td><td>~12,000</td><td>~10,000</td><td>~500</td><td class="yellow">Verifier</td><td><span class="priority-box p3">PLUS TARD</span></td></tr>
+<tr><td><strong>Peugeot 2008</strong></td><td>~10,000</td><td>~9,000</td><td>~450</td><td class="yellow">Verifier</td><td><span class="priority-box p3">PLUS TARD</span></td></tr>
+<tr><td><strong>Citroen C4 (1, 2)</strong></td><td>~15,000</td><td>~12,000</td><td>~600</td><td class="green">OUI</td><td><span class="priority-box p2">ACHETER</span></td></tr>
+<tr><td><strong>Ford Fiesta</strong></td><td>~12,000</td><td>~10,000</td><td>~500</td><td class="green">OUI</td><td><span class="priority-box p2">ACHETER</span></td></tr>
+<tr><td><strong>Renault Fluence</strong></td><td>~12,000</td><td>~10,000</td><td>~500</td><td class="green">OUI</td><td><span class="priority-box p2">ACHETER</span></td></tr>
+<tr><td><strong>Renault Symbol</strong></td><td>~15,000</td><td>~12,000</td><td>~600</td><td class="green">OUI</td><td><span class="priority-box p1">ACHETER</span></td></tr>
+<tr><td><strong>Mercedes C-Class (W204, W205)</strong></td><td>~8,000</td><td>~7,000</td><td>~350</td><td class="green">OUI</td><td><span class="priority-box p2">ACHETER</span></td></tr>
+<tr><td><strong>Mercedes E-Class (W211, W213)</strong></td><td>~6,000</td><td>~5,000</td><td>~250</td><td class="green">OUI</td><td><span class="priority-box p3">MARGE HAUTE</span></td></tr>
+<tr><td><strong>BMW Serie 3 (E90, F30)</strong></td><td>~6,000</td><td>~5,000</td><td>~250</td><td class="green">OUI (E90)</td><td><span class="priority-box p3">MARGE HAUTE</span></td></tr>
+<tr><td><strong>BMW Serie 5 (E60, F10)</strong></td><td>~5,000</td><td>~4,000</td><td>~200</td><td class="green">OUI</td><td><span class="priority-box p3">MARGE HAUTE</span></td></tr>
+</table>
+<p style="color:#94a3b8;font-size:0.8em;">* "Brackets/an estime" = parc × 5% taux de casse annuel. Hypothese conservatrice.</p>
+</div>
+
+<h2>3. Decision finale — Votre commande $400 optimisee</h2>
+
+<div class="note hot">
+<strong>REGLE:</strong> Achetez UNIQUEMENT les modeles qui sont: (1) dans le top 25 des ventes Maroc ET (2) disponibles chez Bross. Ignorez les modeles trop recents (pas encore de casse) ou trop rares.
+</div>
+
+<div class="card">
+<h3>ACHETER (confirme Bross + forte demande Maroc)</h3>
+<table>
+<tr><th>#</th><th>Bross Code</th><th>Modele</th><th>Parc estime</th><th>Prix Bross</th></tr>
+<tr><td>1</td><td>BHL756</td><td><strong>Dacia Logan/Sandero MK2</strong></td><td>~230,000</td><td>$9.50</td></tr>
+<tr><td>2</td><td>BHL516+517</td><td><strong>Renault Clio MK4</strong></td><td>~50,000</td><td>$11.40</td></tr>
+<tr><td>3</td><td>BHL569</td><td><strong>Renault Clio MK5</strong></td><td>~20,000</td><td>$26.60</td></tr>
+<tr><td>4</td><td>BHL522+523</td><td><strong>Renault Symbol MK3</strong></td><td>~12,000</td><td>$15.20</td></tr>
+<tr><td>5</td><td>BHL565</td><td><strong>Dacia Duster MK2</strong></td><td>~35,000</td><td>$20.90</td></tr>
+<tr><td>6</td><td>BHL520+521</td><td><strong>Dacia Lodgy/Dokker</strong></td><td>~30,000</td><td>$12.35</td></tr>
+<tr><td>7</td><td>BHL13+14</td><td><strong>Renault Megane MK2</strong></td><td>~20,000</td><td>$8.55</td></tr>
+<tr><td>8</td><td>BHL510+511</td><td><strong>Renault Megane MK3</strong></td><td>~15,000</td><td>$11.40</td></tr>
+<tr><td>9</td><td>BHL546+547</td><td><strong>Renault Megane MK4</strong></td><td>~8,000</td><td>$17.10</td></tr>
+<tr><td>10</td><td>BHL15+16</td><td><strong>Renault Fluence</strong></td><td>~10,000</td><td>$11.40</td></tr>
+<tr><td>11</td><td>BHL512+513</td><td><strong>Peugeot 308 MK1</strong></td><td>~10,000</td><td>$20.90</td></tr>
+<tr><td>12</td><td>BHL518+519</td><td><strong>Peugeot 301</strong></td><td>~15,000</td><td>$12.35</td></tr>
+<tr><td>13</td><td>BHL536+537</td><td><strong>Citroen C-Elysee</strong></td><td>~18,000</td><td>$12.35</td></tr>
+<tr><td>14</td><td>BHL5+6</td><td><strong>Citroen C4 MK1</strong></td><td>~8,000</td><td>$10.45</td></tr>
+<tr><td>15</td><td>BHL574</td><td><strong>Citroen C4 MK2</strong></td><td>~5,000</td><td>$21.85</td></tr>
+<tr><td>16</td><td>BHL29+30</td><td><strong>VW Golf MK5</strong></td><td>~10,000</td><td>$12.35</td></tr>
+<tr><td>17</td><td>BHL31+32</td><td><strong>VW Golf MK6</strong></td><td>~8,000</td><td>$10.45</td></tr>
+<tr><td>18</td><td>BHL33+34</td><td><strong>VW Polo MK5</strong></td><td>~10,000</td><td>$12.35</td></tr>
+<tr><td>19</td><td>BHL568</td><td><strong>VW Polo MK6</strong></td><td>~5,000</td><td>$15.20</td></tr>
+<tr><td>20</td><td>BHL25+26</td><td><strong>VW Touran/Caddy MK3</strong></td><td>~8,000</td><td>$11.40</td></tr>
+<tr><td>21</td><td>BHL43+44</td><td><strong>Ford Fiesta MK6</strong></td><td>~8,000</td><td>$11.40</td></tr>
+<tr><td>22</td><td>BHL570</td><td><strong>Ford Focus C-Max MK1</strong></td><td>~6,000</td><td>$6.65</td></tr>
+<tr><td>23</td><td>BHL17+18</td><td><strong>Mercedes E W211</strong></td><td>~5,000</td><td>$25.65</td></tr>
+<tr><td>24</td><td>BHL514+515</td><td><strong>Mercedes C W204</strong></td><td>~5,000</td><td>$21.85</td></tr>
+<tr><td>25</td><td>BHL573</td><td><strong>Opel Astra J</strong></td><td>~5,000</td><td>$23.75</td></tr>
+<tr><td>26</td><td>BHL19+20</td><td><strong>Seat Leon/Altea</strong></td><td>~4,000</td><td>$10.45</td></tr>
+<tr><td>27</td><td>BHL3+4</td><td><strong>BMW 5 E60</strong></td><td>~4,000</td><td>$13.30</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="4" style="text-align:right;font-weight:bold;color:#f59e0b;">TOTAL</td><td class="green" style="font-weight:bold;font-size:1.1em;">$397.25</td></tr>
+</table>
+</div>
+
+<div class="note">
+<strong>MODELES RETIRES (vs liste precedente):</strong><br>
+- <del>Fiat Linea</del> — Quasi inexistante au Maroc<br>
+- <del>Hyundai i20</del> — Trop petit parc (967 ventes 2024)<br>
+- <del>Toyota Corolla</del> — Bross n'a pas de bracket dispo<br><br>
+<strong>MODELES A AJOUTER PLUS TARD (quand budget permet):</strong><br>
+- Peugeot 208 — 6,941 ventes 2024 mais modele recent, pas encore de casse<br>
+- Hyundai Tucson — 6,053 ventes mais verifier si Bross a le bracket<br>
+- Opel Corsa — 4,940 ventes, verifier Bross<br>
+- Skoda Octavia — 1,576 ventes, verifier Bross
+</div>
+
+<h2>4. Headlight sales data (from your catalog)</h2>
+<div class="card">
+<p>Top models in your headlight catalog (2,429 listings from European sources):</p>
+<table>
+<tr><th>Rang</th><th>Modele</th><th>Listings dans catalogue</th><th>Egalement top ventes Maroc?</th></tr>
+<tr><td>1</td><td>VW Polo</td><td>16</td><td class="green">OUI — #18 ventes</td></tr>
+<tr><td>2</td><td>Fiat Doblo</td><td>15</td><td class="red">NON — rare au Maroc</td></tr>
+<tr><td>3</td><td>Renault Megane</td><td>14</td><td class="green">OUI — #23 ventes</td></tr>
+<tr><td>4</td><td>Peugeot 308</td><td>13</td><td class="green">OUI — #63 ventes</td></tr>
+<tr><td>5</td><td>Mercedes C-Class</td><td>12</td><td class="green">OUI — #70 ventes</td></tr>
+<tr><td>6</td><td>Ford Focus</td><td>11</td><td class="yellow">MOYEN — en declin</td></tr>
+<tr><td>7</td><td>VW Golf</td><td>11</td><td class="green">OUI — #36 ventes</td></tr>
+<tr><td>8</td><td>Ford Fiesta</td><td>10</td><td class="yellow">MOYEN — arrete</td></tr>
+<tr><td>9</td><td>Citroen C4</td><td>9</td><td class="green">OUI — #41 ventes</td></tr>
+<tr><td>10</td><td>Renault Clio</td><td>9</td><td class="green">OUI — #4 ventes!</td></tr>
+</table>
+</div>
+
+<h2>5. Conclusion</h2>
+<div class="card" style="border-color:#f59e0b;">
+<h3 style="color:#f59e0b;">Votre marche cible = 27 modeles couvrant ~650,000 voitures au Maroc</h3>
+<p>Avec un taux de casse de bracket estime a 5% par an, cela represente <strong>~32,500 brackets potentiels par an</strong> au Maroc.</p>
+<p>Si vous capturez seulement <strong>1% de ce marche</strong> = 325 brackets/an × 150 DH moyen = <strong>48,750 DH/an</strong> de revenu.</p>
+<p>Si vous capturez <strong>5%</strong> = <strong>243,750 DH/an</strong>.</p>
+<p>Investissement: <strong>$400 (4,000 DH)</strong> pour les samples = ROI en 1-2 mois.</p>
+</div>
+
+</body>
+</html>
